@@ -4,8 +4,10 @@
     "author": "Dima Vakatsiienko <dvakatsiienko@lectrum.io>",
     "private": true,
     "scripts": {
+        "build": "webpack --config=./scripts/webpack/webpack.config.js",
         "checkpoint": "cross-env-shell NODE_ENV=development node --require @babel/register \"./scripts/git/checkpoint.js\"",
-        "sync": "cross-env-shell NODE_ENV=development node --require @babel/register \"./scripts/git/sync.js\""
+        "sync": "cross-env-shell NODE_ENV=development node --require @babel/register \"./scripts/git/sync.js\"",
+        "serve": "serve \"./dist\" -s"
     },
     "devDependencies": {
         "@babel/core": "7.2.0",
@@ -14,8 +16,15 @@
         "@babel/register": "7.0.0",
         "app-root-path": "2.1.0",
         "babel-plugin-dynamic-import-node": "2.2.0",
+        "clean-webpack-plugin": "^3.0.0",
         "cross-env": "5.2.0",
         "moment": "2.22.2",
-        "nodegit": "0.23.0"
+        "nodegit": "0.23.0",
+        "serve": "^11.2.0",
+        "webpack": "^4.40.2",
+        "webpack-cli": "^3.3.9"
+    },
+    "dependencies": {
+        "html-webpack-plugin": "^3.2.0"
     }
 }
